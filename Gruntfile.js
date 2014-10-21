@@ -29,10 +29,10 @@ module.exports = function (grunt) {
                 files: ['<%= yeoman.app %>/scripts/**/*.coffee'],
                 tasks: ['coffee:dist','neuter']
             },
-            coffeeTest: {
-                files: ['test/spec/{,*/}*.coffee'],
-                tasks: ['coffee:test']
-            },
+            // coffeeTest: {
+            //     files: ['test/spec/{,*/}*.coffee'],
+            //     tasks: ['coffee:test']
+            // },
             compass: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
                 tasks: ['compass:server']
