@@ -190,7 +190,8 @@ Modal component.
         fullSizeButtons = false;
       }
       body = Ember.View.extend({
-        template: Ember.Handlebars.compile(message || "Are you sure you would like to perform this action?")
+        templateName: 'components/bs-modal-confirm',
+        message: message
       });
       buttons = [
         Ember.Object.create({
@@ -229,7 +230,8 @@ Modal component.
         fullSizeButtons = false;
       }
       body = Ember.View.extend({
-        template: Ember.Handlebars.compile(message || "Are you sure you would like to perform this action?")
+        templateName: 'components/bs-modal-confirm',
+        message: message
       });
       buttons = [
         Ember.Object.create({
@@ -411,6 +413,37 @@ function program9(depth0,data) {
   stack2 = helpers.each.call(depth0, "footerViews", {hash:{},inverse:self.noop,fn:self.program(9, program9, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n        </div>\n    </div>\n</div>");
+  return buffer;
+  
+});
+
+this["Ember"]["TEMPLATES"]["components/bs-modal-confirm"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, hashTypes, hashContexts, escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = '', hashTypes, hashContexts;
+  data.buffer.push("\n  ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "message", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n");
+  return buffer;
+  }
+
+function program3(depth0,data) {
+  
+  
+  data.buffer.push("\n  Are you sure you would like to perform this action?\n");
+  }
+
+  hashTypes = {};
+  hashContexts = {};
+  stack1 = helpers['if'].call(depth0, "message", {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n");
   return buffer;
   
 });

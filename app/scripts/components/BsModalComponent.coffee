@@ -21,7 +21,7 @@ Bootstrap.BsModalComponent = Ember.Component.extend(Ember.Evented,
     isVis: false
     fullSizeButtons: false
     fade: true
-    
+
     didInsertElement: ->
         @._super()
         @setupBinders()
@@ -84,7 +84,7 @@ Bootstrap.BsModalComponent = Ember.Component.extend(Ember.Evented,
             if current.get('manual') then current.destroy() else current.hide()
             return
          @trigger 'closed'
-        
+
 
     #Invoked automatically by ember when the view is destroyed, giving us a chance to perform cleanups
     willDestroyElement: ->
@@ -142,17 +142,19 @@ Bootstrap.ModalManager = Ember.Object.create(
 
     confirm: (controller, title, message, confirmButtonTitle = "Confirm", confirmButtonEvent = "modalConfirmed",confirmButtonType = null, cancelButtonTitle = "Cancel", cancelButtonEvent = "modalCanceled",cancelButtonType = null, targetObj = controller, fade = true, fullSizeButtons = false) ->
         body = Ember.View.extend(
-            template: Ember.Handlebars.compile(message || "Are you sure you would like to perform this action?")
+            templateName: 'components/bs-modal-confirm',
+            message: message
         )
         buttons = [
             Ember.Object.create({title: confirmButtonTitle, clicked: confirmButtonEvent, type: confirmButtonType, dismiss: 'modal'})
             Ember.Object.create({title: cancelButtonTitle, clicked: cancelButtonEvent, type: cancelButtonType, dismiss: 'modal'})
         ]
         @open('confirm-modal', title || 'Confirmation required!', body, buttons, controller, fade, fullSizeButtons, targetObj)
-		
+
 	okModal: (controller, title, message, okButtonTitle = "OK", okButtonEvent = "okModal", okButtonType = null, targetObj = controller, fade = true, fullSizeButtons = false) ->
         body = Ember.View.extend(
-            template: Ember.Handlebars.compile(message || "Are you sure you would like to perform this action?")
+            templateName: 'components/bs-modal-confirm',
+            message: message
         )
         buttons = [
             Ember.Object.create({title: okButtonTitle, clicked:okButtonEvent, type: okButtonType, dismiss: 'modal'})

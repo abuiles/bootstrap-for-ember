@@ -26,7 +26,7 @@ Bootstrap.NotificationsView = Ember.CollectionView.extend (
 
     itemViewClass: Ember.View.extend(
         classNames: ['alert', 'notification']
-        template: Ember.Handlebars.compile '{{view.content.message}}'
+        templateName: 'views/notification-item-view'
         classNameBindings: ["alertType"]
         isVisible: false
         alertType: (->

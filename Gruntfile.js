@@ -345,13 +345,17 @@ module.exports = function (grunt) {
                     '.tmp/scripts/bs-label.js': '<%= yeoman.app %>/templates/components/bs-label.hbs',
                     '.tmp/scripts/bs-badge.js': '<%= yeoman.app %>/templates/components/bs-badge.hbs',
                     '.tmp/scripts/bs-button.js': '<%= yeoman.app %>/templates/components/bs-button.hbs',
+                    '.tmp/scripts/bs-notifications.js': '<%= yeoman.app %>/templates/view/notification-item-view.hbs',
                     '.tmp/scripts/bs-btn-toolbar.js': '<%= yeoman.app %>/templates/components/bs-btn-toolbar.hbs',
                     '.tmp/scripts/bs-progressbar.js': [
                         '<%= yeoman.app %>/templates/components/bs-progress.hbs',
                         '<%= yeoman.app %>/templates/components/bs-progressbar.hbs'
                         ],
                     '.tmp/scripts/bs-pills.js': '<%= yeoman.app %>/templates/components/bs-pills.hbs',
-                    '.tmp/scripts/bs-modal.js': '<%= yeoman.app %>/templates/components/bs-modal.hbs'
+                  '.tmp/scripts/bs-modal.js': [
+                    '<%= yeoman.app %>/templates/components/bs-modal.hbs',
+                    '<%= yeoman.app %>/templates/components/bs-modal-confirm.hbs',
+                  ]
                 }
             },
             compile_showcase: {
